@@ -18,7 +18,7 @@ import java.util.stream.Stream;
  * @author: tiantziquan
  * @create: 2019-07-10 11:27
  */
-public class TestList {
+public class JavaLambda {
 
     @Test
     public void testList() {
@@ -117,6 +117,15 @@ public class TestList {
     public void testArrAs(){
         List<Integer> checkOperatorSourceFlag = Arrays.asList(2,3);
         System.out.println("checkOperatorSourceFlag = " + checkOperatorSourceFlag);
+    }
+
+    @Test
+    public void testFilter(){
+        GetBeanList getBeanList=new GetBeanList();
+        List<DeptDo> deptList = getBeanList.getDeptList(4);
+        List<DeptDo> collect = deptList.stream().filter(deptDo -> deptDo.getDeptId() > 2).collect(Collectors.toList());
+        System.out.println("collect = " + collect);
+
     }
 
 }
