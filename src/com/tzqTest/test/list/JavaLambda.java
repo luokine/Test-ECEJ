@@ -123,6 +123,7 @@ public class JavaLambda {
     public void testFilter(){
         GetBeanList getBeanList=new GetBeanList();
         List<DeptDo> deptList = getBeanList.getDeptList(4);
+        System.out.println("deptList = " + deptList);
         List<DeptDo> collect = deptList.stream().filter(deptDo -> deptDo.getDeptId() > 2).collect(Collectors.toList());
         System.out.println("collect = " + collect);
 
