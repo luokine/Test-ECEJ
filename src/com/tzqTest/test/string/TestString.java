@@ -5,6 +5,7 @@ import com.tzqTest.bean.TestNotice;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,5 +37,25 @@ public class TestString {
         System.out.println("testNotice = " + testNotice);
 
 
+    }
+
+    @Test
+    public void testBig(){
+        BigDecimal mach=new BigDecimal("1000.88");
+        BigDecimal mach2=new BigDecimal("100");
+        double i=1000.99;
+        String s = String.format("%.2f", (double) i / 100);
+        System.out.println("s = " + s);
+        double fd=new Double(s);
+        System.out.println("fd = " + fd);
+        BigDecimal divide = mach.divide(mach2, 2, BigDecimal.ROUND_UNNECESSARY);
+        System.out.println("divide = " + divide);
+    }
+    @Test
+    public void testCOm(){
+        Integer i=3;
+        boolean b=true;
+        b=i.equals(2)?true:false;
+        System.out.println("b = " + b);
     }
 }

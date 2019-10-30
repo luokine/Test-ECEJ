@@ -1,10 +1,9 @@
 package com.tzqTest.test.list;
 
 import com.alibaba.fastjson.JSON;
-import com.tzqTest.bean.DeptDo;
-import com.tzqTest.bean.Employee;
-import com.tzqTest.bean.GetBeanList;
-import com.tzqTest.bean.User;
+import com.google.common.collect.Lists;
+import com.tzqTest.bean.*;
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -26,8 +25,8 @@ public class JavaLambda {
         User user2 = new User();
         user1.setAge(12);
         user1.setName("luokine");
-        user1.setNo("001");
-        user2.setNo("002");
+        user1.setNo(1);
+        user2.setNo(2);
         user2.setAge(13);
         user2.setName("luokine2");
         List<User> userList = new ArrayList<>();
@@ -129,4 +128,35 @@ public class JavaLambda {
 
     }
 
+    @Test
+    public void testCom(){
+        // User getNo-学号 唯一
+        GetBeanList beanList=new GetBeanList();
+        // userList1  user1 user2
+        // userList2  user1 user2 user3 user4
+        List<User> userList1 = beanList.getUserList(2);
+        List<User> userList2 = beanList.getUserList(4);
+        // 获取 userList1 中的唯一标识：例如-学号
+        List<Integer> noList1 = userList1.stream().map(User::getNo).distinct().collect(Collectors.toList());
+        // 过滤 userList2 中 userList1 所没有的 user3 user4  collect 即为 user3 user4
+        List<User> collect = userList2.stream().filter(item -> !noList1.contains(item.getNo())).collect(Collectors.toList());
+        userList1.addAll(collect);
+    }
+
+    @Test
+    public void testCompare(){
+
+        List<AlipaySchoolSettleinfoDto> listSuccess = Lists.newArrayList();
+        List<PayAlipaySchool> listAll = Lists.newArrayList();
+
+        List<String> listId = listSuccess.stream().map(AlipaySchoolSettleinfoDto::getPartnerId).distinct().collect(Collectors.toList());
+        List<PayAlipaySchool> collect = listAll.stream().filter(item -> !listId.contains(item.getSchoolPid())).collect(Collectors.toList());
+        List<AlipaySchoolSettleinfoDto> dataList = collect.stream().map(item -> {
+            AlipaySchoolSettleinfoDto dto = new AlipaySchoolSettleinfoDto();
+            dto.setPartnerId(item.getSchoolPid());
+            return dto;
+        }).collect(Collectors.toList());
+
+
+    }
 }

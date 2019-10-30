@@ -22,4 +22,16 @@ public class GetBeanList {
         }
         return deptList;
     }
+    public List<User> getUserList(int num) {
+
+        List<User> userList = Lists.newArrayList();
+        for (int i = 1; i <= num; i++) {
+            User user = new User();
+            user.setAge(i);
+            user.setName(Integer.valueOf(i).toString());
+            user.setNo(i);
+            userList.add(user);
+        }
+        return userList;
+    }
 }

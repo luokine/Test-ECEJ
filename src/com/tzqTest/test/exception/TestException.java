@@ -27,13 +27,13 @@ public class TestException {
     public void testEx(){
         Map<String, User> userMap=new HashMap<>();
         User user=new User();
-        user.setNo("001");
+        user.setNo(1);
         user.setName("zds111");
         user.setAge(1);
         List<User> userList=new ArrayList<>();
         userList.add(user);
         User user1=new User();
-        user1.setNo("002");
+        user1.setNo(2);
         user1.setName("zds222");
         user1.setAge(2);
         userList.add(user1);

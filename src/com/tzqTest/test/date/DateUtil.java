@@ -2,6 +2,9 @@ package com.tzqTest.test.date;
 
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -55,10 +58,48 @@ public class DateUtil {
         System.out.println("date = " + date);
         Date monthBegin = getMonthBegin(date);
         System.out.println("monthBegin = " + monthBegin);
-            Thread.sleep(3000);
-            Date date2 = new Date();
-            long second = getDifferentSecond(date, date2);
-            System.out.println("second = " + second);
+        Thread.sleep(3000);
+        Date date2 = new Date();
+        long second = getDifferentSecond(date, date2);
+        System.out.println("second = " + second);
 
+    }
+
+    @Test
+    public void dateFormat() {
+        String date = "2019-10-27 14:15:16";
+        Date date2 = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date parse = new Date();
+        try {
+            parse = format.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String format1 = format.format(date2);
+        System.out.println("format1 = " + format1);
+
+        String format2 = format.format(parse);
+        System.out.println("format2 = " + format2);
+
+
+    }
+
+    @Test
+    public void dateAddDate() {
+        String date = "2019-10-27 14:15:16";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date parse = new Date();
+        try {
+            parse = format.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(parse);
+        cal.add(Calendar.DATE, 2);
+        cal.getTime();
+        Date time = cal.getTime();
+        System.out.println("time = " + time);
     }
 }

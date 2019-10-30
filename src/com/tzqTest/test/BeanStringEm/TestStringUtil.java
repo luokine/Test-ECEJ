@@ -30,7 +30,10 @@ public class TestStringUtil {
         User user = new User();
         user.setAge(13);
         user.setName("001");
-        if (StringUtils.isEmpty(user.getNo())) {
+//        if (StringUtils.isEmpty(user.getNo())) {
+//            System.out.println("user = " + user);
+//        }
+        if(user.getNo()==null){
             System.out.println("user = " + user);
         }
     }

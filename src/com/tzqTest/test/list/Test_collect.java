@@ -18,8 +18,8 @@ public class Test_collect {
         User user2 = new User();
         user1.setAge(12);
         user1.setName("luokine");
-        user1.setNo("001");
-        user2.setNo("002");
+        user1.setNo(1);
+        user2.setNo(2);
         user2.setAge(13);
         user2.setName("luokine2");
         List<User> userList = new ArrayList<>();
