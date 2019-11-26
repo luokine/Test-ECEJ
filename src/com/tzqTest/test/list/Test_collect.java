@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-07-18 10:23
  */
 public class Test_collect {

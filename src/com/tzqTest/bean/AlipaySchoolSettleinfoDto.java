@@ -3,7 +3,7 @@ package com.tzqTest.bean;
 import lombok.Data;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-10-18 15:50
  */
 @Data

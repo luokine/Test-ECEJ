@@ -2,8 +2,6 @@ package com.tzqTest.test.map;
 
 import com.google.common.collect.Lists;
 import com.tzqTest.bean.User;
-import com.tzqTest.test.list.DemoList;
-import org.apache.commons.collections.list.AbstractListDecorator;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -13,7 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-08-29 13:08
  */
 public class TestMap {

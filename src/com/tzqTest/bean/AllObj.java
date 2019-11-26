@@ -3,7 +3,7 @@ package com.tzqTest.bean;
 import java.util.List;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-07-18 11:18
  */
 public class AllObj {

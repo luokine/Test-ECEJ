@@ -1,18 +1,16 @@
 package com.tzqTest.test.string;
 
 import com.google.common.collect.Lists;
+import com.tzqTest.bean.DeptDo;
 import com.tzqTest.bean.TestNotice;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collector;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-09-05 13:52
  */
 public class TestString {
@@ -58,4 +56,13 @@ public class TestString {
         b=i.equals(2)?true:false;
         System.out.println("b = " + b);
     }
+
+    @Test
+    public void createBeanTest(){
+        DeptDo deptDo=new DeptDo();
+        deptDo.setDeptId(1);
+        deptDo.setDeptName("taste life");
+        System.out.println("deptDo = " + deptDo);
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-08-20 10:08
  */
 public class TestException {

@@ -4,12 +4,10 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-09-29 16:11
  */
 public class DateUtil {
@@ -101,5 +99,77 @@ public class DateUtil {
         cal.getTime();
         Date time = cal.getTime();
         System.out.println("time = " + time);
+    }
+
+    public static Map<String, Date> getStartEndTime(String type) {
+        Date startTime = new Date();
+        Date endTime = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String subStartDate = sdf.format(startTime);
+        String subStartString;
+        String startTimeStr = null;
+        String endTimeStr = null;
+        if (type.equals("year")) {
+            subStartString = subStartDate.substring(0, 4);
+            startTimeStr = subStartString + "-01-01 00:00:00";
+            endTimeStr = subStartString + "-12-31 23:59:59";
+        } else if (type.equals("month")) {
+            subStartString = subStartDate.substring(0, 8);
+            startTimeStr = subStartString + "01 00:00:00";
+            //设置时间格式
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            //获得实体类
+            Calendar ca = Calendar.getInstance();
+            //设置最后一天
+            ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));
+            //最后一天格式化
+            String lastDay = format.format(ca.getTime());
+            endTimeStr = lastDay + " 23:59:59";
+        } else if (type.equals("day")) {
+            startTimeStr = subStartDate + " 00:00:00";
+            endTimeStr = subStartDate + " 23:59:59";
+        }
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            startTime = format.parse(startTimeStr);
+            endTime = format.parse(endTimeStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Map<String, Date> map = new HashMap<>();
+        map.put("startTime", startTime);
+        map.put("endTime", endTime);
+        System.out.println("startTimeStr = " + startTimeStr);
+        System.out.println("endTimeStr = " + endTimeStr);
+        return map;
+    }
+
+    @Test
+    public void currentMonthDay(){
+        Calendar cale=Calendar.getInstance();
+        // 获取当月第一天和最后一天
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String firstday, lastday;
+        // 获取前月的第一天
+        cale = Calendar.getInstance();
+        cale.add(Calendar.MONTH, 0);
+        cale.set(Calendar.DAY_OF_MONTH, 1);
+        firstday = format.format(cale.getTime());
+        // 获取前月的最后一天
+        cale = Calendar.getInstance();
+        cale.add(Calendar.MONTH, 1);
+        cale.set(Calendar.DAY_OF_MONTH, 0);
+        lastday = format.format(cale.getTime());
+        System.out.println("本月第一天和最后一天分别是 ： " + firstday + " and " + lastday);
+
+        //设置时间格式
+        SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
+        //获得实体类
+        Calendar ca = Calendar.getInstance();
+        //设置最后一天
+        ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));
+        //最后一天格式化
+        String lastDay2 = format2.format(ca.getTime());
+        System.out.println("lastDay2 = " + lastDay2);
     }
 }

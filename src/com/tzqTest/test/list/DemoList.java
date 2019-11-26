@@ -1,12 +1,15 @@
 package com.tzqTest.test.list;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-09-03 10:14
  */
+@Data
 public class DemoList {
 
 

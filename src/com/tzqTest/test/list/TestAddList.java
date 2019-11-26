@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-07-10 11:29
  */
 public class TestAddList {

@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-07-04 11:23
  */
 public class TestStringFormat {

@@ -8,7 +8,7 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-07-23 15:27
  */
 public class HeaderGenerate {

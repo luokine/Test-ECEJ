@@ -3,7 +3,7 @@ package com.tzqTest.bean;
 import lombok.Data;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-07-10 11:28
  */
 @Data
@@ -12,36 +12,27 @@ public class User {
     private Integer age;
     private Integer no;
 
-//    @Override
-//    public String toString() {
-//        return "User{" +
-//                "name='" + name + '\'' +
-//                ", age=" + age +
-//                ", no='" + no + '\'' +
-//                '}';
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public Integer getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(Integer age) {
-//        this.age = age;
-//    }
-//
-//    public String getNo() {
-//        return no;
-//    }
-//
-//    public void setNo(String no) {
-//        this.no = no;
-//    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Integer getNo() {
+        return no;
+    }
+
+    public void setNo(Integer no) {
+        this.no = no;
+    }
 }

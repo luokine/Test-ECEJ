@@ -1,11 +1,9 @@
 package com.tzqTest.bean;
 
-import lombok.Data;
-
 import java.util.Date;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-08-09 11:31
  */
 public class Employee {

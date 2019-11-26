@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * 日期工具类
  */
-public abstract class DateUtils {
+public  class DateUtils {
 
 //    private static final Logger log = Logger.getLogger(DateUtils.class);
 

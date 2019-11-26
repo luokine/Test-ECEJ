@@ -7,7 +7,7 @@ import org.junit.Test;
 import javax.lang.model.SourceVersion;
 
 /**
- * @author: tiantziquan
+ * @author: tianziquan
  * @create: 2019-09-10 18:47
  */
 public class TestStringUtil {
