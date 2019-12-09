@@ -2,11 +2,9 @@ package com.tzqTest.test.list;
 
 import com.tzqTest.bean.User;
 import org.apache.commons.collections.CollectionUtils;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author: tianziquan
@@ -36,5 +34,11 @@ public class Test_collect {
 
         CollectionUtils.isEmpty(userList);
 
+    }
+
+    @Test
+    public void testASList(){
+        List<Integer> integerList = Arrays.asList(1,3,4);
+        System.out.println("integerList = " + integerList);
     }
 }
